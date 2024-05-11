@@ -1,0 +1,45 @@
+@{
+
+   
+
+}
+
+@if (this.Model.ShowComment){
+<div class="cmt-list">
+
+    <div class="row cmt-login">
+        <h2>评论</h2>
+        <div class="cmt-login-input" style='display: @(this.Model.IsLogin?"none":"");'>
+           <a href="/FrontUser/login?returnUrl=/article/show?id=@(this.Model.NewsId)" > <span class="text text-success">登录</span></a><span> 马上评论。</span> <span>没有账号，马上 <a href="/FrontUser/reg?returnUrl=/article/show?id=@(this.Model.NewsId)" ><span class="text text-danger">注册</span></a>
+
+        </div>
+        <div class="row cmt-submit" style="display: @(this.Model.IsLogin?"":"none");">
+            <div class="row cmt-login-text">
+                <textarea id="txtComment"></textarea>
+            </div>
+            <div class="row cmt-login-btn">
+                <input type="button" id="btnAddComment" value="发表" />
+                <input type="hidden" id="txtNewsId" value="@(this.Model.NewsId)" />
+                <input type="hidden" id="txtUserId" value="@(this.Model.UserId)" />
+            </div>
+        </div>
+
+    </div>
+    <div class="row cmt-new">
+        <h2>最新评论</h2>
+    </div>
+    <div id="cmt-content-list">
+        
+    </div>
+
+
+ 
+
+
+
+
+
+
+
+</div>
+}

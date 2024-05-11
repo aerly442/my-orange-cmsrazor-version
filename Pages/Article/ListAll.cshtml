@@ -1,0 +1,38 @@
+﻿@page
+@model MyOrangeCMS_RazorVersion.Pages.Article.ListAllModel
+@{
+    //列表页
+
+    Layout = "_LayoutFront";
+
+}
+
+<div class="col-md-8 mar-list-tmp">
+    <div class="content-ajax">
+        <div class="article-nav-box clearfix">
+            <ul class="article-nav-list clearfix">
+                @if (this.Model.lstSubCat != null && this.Model.lstSubCat.Count > 0)
+                {
+                    @foreach (var cat in this.Model.lstSubCat)
+                    {
+                        <li><a class="@(cat.Code == this.Model.Code?"active":"")" href="/article/listall?code=@(cat.Code)" id="@(cat.Code)" cid="001.001">@(cat.Name)</a></li>
+                         
+                    }
+                }
+            </ul>
+        </div>
+        <!-- 主图，首页推荐 -->
+        <div id="box_0" class="news_box"></div>
+
+
+    </div>
+
+    <nav class="page-nav">
+        <input name="Code" id="Code"  type="hidden" value="@this.Model.Code" />
+        <input name="Tag" id="Tag" type="hidden" value="@this.Model.Tag" />
+        <input name="Keyword" id="Keyword" type="hidden" value="@this.Model.Keyword" />
+        <input name="DataType" id="DataType" value="listall" type="hidden" />
+        <a href="javascript:void(0)" class="ajax-more-btn">阅读更多</a>
+    </nav>
+
+</div>

@@ -1,0 +1,98 @@
+.download {
+    padding-bottom: 50px;
+}
+
+.cmt-login h2 {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.cmt-new h2 {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.cmt-login-input {
+    background-color: #fff;
+    margin: 0 auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    width: 95%;
+    height: 60px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.cmt-login-text textarea {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    width: 90%;
+    height: 60px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.cmt-submit div {
+    margin-left: 35px;
+}
+
+.cmt-login-btn {
+    text-align: right;
+    width: 90%;
+}
+
+.cmt-login-btn input {
+    text-align: right;
+    margin-right: 15px;
+}
+
+.cmt-content {
+    padding-left: 10px;
+}
+
+.cmt-headerpic img {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.cmt-nickname span {
+    line-height: 45px;
+    font-weight: bold;
+}
+
+.cmt-content-bottom {
+    border-bottom: 1px solid #efefef;
+    width: 85%;
+    color: #d1d1d1;
+}
+
+.cmt-reply p {
+    font-size: 14px;
+    line-height: 26px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.cmt-header {
+    margin-top: 15px;
+}
+
+.cmt-list {
+    margin-bottom: 35px;
+}
+
+.text-info {
+    color: #3a87ad;
+}
+
+.text-success {
+    color: #468847;
+}
+
+.text-danger {
+    color: #b94a48;
+}

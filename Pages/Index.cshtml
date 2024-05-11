@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "首页";
+    Layout = "_LayoutFront";
+}
+
+<div class="col-md-8 mar-tmp">
+    <div class="content-ajax">
+        <div class="article-nav-box clearfix">
+            <ul class="article-nav-list clearfix">
+                <li><a href="javascript:void(0);" id="f1" class="active" cid="0">最新</a></li>
+                <li><a href="/article/listall?code=001.001">文章</a></li>
+                <li><a href="/article/listall?code=001.002">视频</a></li>
+
+
+            </ul>
+        </div>
+        <!-- 主图，首页推荐 -->
+        <div id="box_0" class="news_box"></div>
+
+
+
+
+    </div>
+
+    <nav class="page-nav">
+        <a href="javascript:void(0)" class="ajax-more-btn">阅读更多</a>
+    </nav>
+</div>

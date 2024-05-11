@@ -1,0 +1,15 @@
+﻿@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Newss.UploadImageModel
+@{
+	Layout = "_LayoutAdminJson";
+}
+@{
+	if (this.Model.ShowDefaultJson){
+ 
+		@Html.Raw(this.Model.DefaultJson)
+	}
+	else{
+
+		@Html.Raw(this.Model.SuccessJson)
+	}
+}

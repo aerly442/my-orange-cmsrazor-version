@@ -1,0 +1,111 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Menu_rulers.EditModel
+
+ 
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "管理数据";
+    ViewData["UserPower"] = Service.UserPower.GetList();
+    var lstParent = this.Model.lstMenuDTO.Where(x => x.Parentid == 0).OrderBy(x=>x.Sort).ToList();
+     
+}
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理数据
+            </h3>
+            <span>
+                <a asp-page="/Admin/Managers/Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+
+    <form class="form-horizontal frmMenuRulers" role="role" method="post" accept-charset="utf-8">
+        <div class="row">
+            <div class="col-md-12 form-horizontal row-border">
+                <div class="widget box">
+                    <div class="widget-header">
+                        <h4>
+                            <i class="icon-reorder">
+                            </i>
+                            输入您的数据:
+                        </h4>
+                    </div>
+                    <div class="widget-content">
+
+                        <div class="alert alert-danger" id="divHidden" style="display: none;">
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        @foreach(var m in lstParent){
+
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label  text-success text-left">
+                                    <input type="checkbox" name="chbMenu" class="chbParent"  id="chbMenu@(m.Id)" value="@m.Id">&nbsp;@m.Name
+                                </label>
+                                <div class="col-md-10 input-width-xxlarge @("divChb"+m.Id)">
+                                @{
+                                  
+                                    foreach(var son  in this.Model.lstMenuDTO.Where(x=>x.Parentid==m.Id).ToList()){
+
+                             
+                                                <label class=" control-label padding-right-5px">
+                                                <input name="chbMenu" id="chbMenu@(son.Id)" value="@son.Id" type="checkbox">&nbsp;@son.Name
+                                            </label>
+                                        }
+
+                                    }
+
+                                </div>
+                            </div>
+
+
+
+                        }
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input type="submit" value="保 存" class="btn btn-success" />
+                                <input asp-for="Menu_ruler.Id" type="hidden" />
+                                <input asp-for="Menu_ruler.Managerid" type="hidden" />
+                                <input asp-for="Menu_ruler.Menuid" type="hidden" />
+                                <input asp-for="Menu_ruler.Username" type="hidden" />
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

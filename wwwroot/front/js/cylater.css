@@ -1,0 +1,170 @@
+input{
+	outline: none;
+}
+
+.cylater-box a {
+	text-decoration: none;
+	color: #000;
+}
+.cylater-box {
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	background: #fff;
+	box-shadow: 0px 0px 10px #666;
+	z-index: 9999;
+	overflow: hidden;
+	width: 260px;
+	border-radius: 4px;
+}
+.cylater-box > h4 {
+	overflow: hidden;
+	width: 220px;
+	height: 42px;
+	background-color: #fefefe;
+	margin: 0;
+	padding: 0 20px;
+	line-height: 42px;
+	color: #333333;
+	font-weight: normal;
+	border-bottom: 1px solid #cccccc;
+	font-size: 14px;
+}
+.cylater-box .cylater-content {
+	width: 220px;
+	min-height: 30px;
+	margin: 30px 20px 30px 20px;
+}
+.cylater-box .cylater-content .cylater-label {
+	display: none;
+	text-align: left;
+	min-height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.cylater-box .cylater-content input {
+	width: 200px;
+	border: #e6e6e6 1px solid;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 2px;
+	padding: 0 10px;
+}
+.cylater-box .cylater-content input:focus {
+	border-color: #c9c9c9;
+}
+.cylater-box .cylater-msg {
+	margin-top: 25px;
+	min-height: 30px;
+	text-align: center;
+	line-height: 26px;
+	font-size: 14px;
+	color: #333333;
+	width: 220px;
+	margin: 20px 20px 20px 20px;
+}
+
+.cylater-box .cylater-page{
+	padding: 10px;
+}
+
+.cylater-box .cylater-title{
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	padding: 5px 15px 0px 15px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	overflow: hidden;
+
+}
+
+
+.cylater-box .cylater-load{
+	background: url(/tuan/images/loading.gif) center no-repeat;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+ 	vertical-align: middle;
+ 	padding-right: 10px;
+}
+
+/* 关闭按钮 */
+
+.cylater-box .cylater-close {
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	width: 12px;
+	height: 12px;
+	display: block;
+	background-image: url(/tuan/images/close.png);
+	background-position: 0 0;
+}
+.cylater-box .cylater-close:hover {
+	background-position: 0 -22px;
+}
+/*确定按钮*/
+
+.cylater-box .cylater-btns {
+	text-align: center;
+	height: 34px;
+	width: 220px;
+	padding: 0px;
+	margin: 0 20px 20px 20px;
+}
+.cylater-box .cylater-btns a {
+	width: 98px;
+	height: 32px;
+	float:left;
+	border-radius: 4px;
+	line-height: 30px;
+	color: #ffffff;
+	border: 1px solid #e44232;
+	background-color: #e44232;
+}
+/*.cylater-box .cylater-btns a:nth-child(1):hover {
+	background-color: #e44232;
+	color: #ffffff !important;
+}*/
+.cylater-box .cylater-btns a:nth-child(2) {
+	margin-left: 20px;
+	color: #e44232;
+	background-color: #ffffff;
+}
+/*.cylater-box .cylater-btns a:nth-child(2):hover {
+	background-color: #c9c9c9;
+	color: #ffffff;
+}*/
+
+
+.cylater-box .cylater-ok,
+.cylater-cancel {
+	height: 42px;
+	width: 100%;
+	font-size: 14px;
+	color: #333333;
+	line-height: 42px;
+	text-align: center;
+}
+.cylater-mask {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 1024px;
+	height: 1000px;
+	background: #000;
+	opacity: 0.3;
+	filter:alpha(opacity=50);
+	width: 100%;
+	z-index: 9998;
+}
+
+
+/* 补充样式 */
+.alertbtn {
+	margin-left: 60px;
+}
+.alertbtn:hover {
+}

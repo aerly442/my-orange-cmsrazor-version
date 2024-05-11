@@ -1,0 +1,120 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Create_oranges.EditModel
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "自动生产代码";
+    //ViewData["UserPower"] = Service.UserPower.GetList();
+}
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理数据
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+
+    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+        <div class="row">
+            <div class="col-md-12 form-horizontal row-border">
+                <div class="widget box">
+                    <div class="widget-header">
+                        <h4>
+                            <i class="icon-reorder">
+                            </i>
+                            输入您的数据:
+                            <label >@(this.Model.TableName)</label>
+                        </h4>
+                    </div>
+                    <div class="widget-content">
+
+                    
+                        <div class="form-group">
+                             <div class="col-md-2">
+                                 <label  class="control-label">请选择表:</label>
+                              </div>
+                             <div class="col-md-3">
+                                 <select asp-for="TableName"
+                                         class="form-control"  
+                                         asp-items="@(this.Model.lstTable)">
+                                </select>
+                              </div>
+                              <div class="col-md-3">
+                                <input type="button" name="btnCreate_orange" id="btnCreate_orange" value="生成" class="btn btn-success" />
+                             
+                             </div>
+                              
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Model</label>
+                            <div class="col-md-3">
+                                
+                                <textarea name="ModelValue" id="ModelValue" cols="90" rows="10"></textarea>
+                             
+                             </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Dto</label>
+                            <div class="col-md-3">
+                                
+                                <textarea name="DtoValue" id="DtoValue" cols="90" rows="10"></textarea>
+                             
+                             </div>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Html</label>
+                            <div class="col-md-3">
+                                
+                                <textarea  name="HtmlValue" id="HtmlValue" cols="90" rows="10"></textarea>
+                             
+                             </div>
+                            
+                        </div>
+
+                           <div class="form-group">
+                            <label class="col-md-2 control-label">Cs</label>
+                            <div class="col-md-3">
+                                
+                                <textarea name="CsValue" id="CsValue" cols="90" rows="10"></textarea>
+                             
+                             </div>
+                            
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+

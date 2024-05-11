@@ -1,0 +1,26 @@
+if (!ModelState.IsValid)
+{
+   this.ErrorInfo = "run this --01";
+   var message    = string.Join(" | ", ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage));
+   this.ErrorInfo += message;
+   this.ErrorInfo +="Email:"+this.User.Email;
+   return Page();
+}
+
+
+
+var query =  from news in _context.News join cat in _context.News_categories 
+on news.News_categories_code equals cat.Code 
+select new NewsDTO {
+           Id = news.Id,
+           Title = news.Title,
+           News_categories_code = news.News_categories_code,
+           news_categoriesDTO = new News_categoriesDTO{
+           Name = cat.Name
+
+       }
+
+} ; 
+var lst = await query.OrderByDescending(x => x.Id).Take(MyPage.PageSize).ToListAsync();

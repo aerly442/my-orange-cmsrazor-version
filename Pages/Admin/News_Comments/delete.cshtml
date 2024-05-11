@@ -1,0 +1,186 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_comments.DeleteModel
+
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "删除用户";
+}
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+          
+            <h3>您确定要删除吗?</h3>
+           
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Id)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Id)
+                         </span>
+                       </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Newsid)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Newsid)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Title)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Title)
+                         </span>
+                       </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Nickname)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Nickname)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Content)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Content)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Createtime)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Createtime)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Updatetime)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Updatetime)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.State)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.State)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Parentid)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Parentid)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Userid)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Userid)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Likecount)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Likecount)
+                         </span>
+                       </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-md-2 ">
+                              @Html.DisplayNameFor(model => model.News_comment.Hatecount)
+                        </label>
+                        <div class="col-md-10">
+                         <span class="text-default">
+                               @Html.DisplayFor(model =>model.News_comment.Hatecount)
+                         </span>
+                       </div>
+                      </div>
+                  
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <form method="post">
+                                <input type="hidden" asp-for="News_comment.Id" />
+                                <input type="submit" value="删除" class="btn btn-danger" /> 
+                            </form>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Index" class="text-success">返回列表</a>
+
+                        </div>
+
+                    </div>
+
+ 
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+ 

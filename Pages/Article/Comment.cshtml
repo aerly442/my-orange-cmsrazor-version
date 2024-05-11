@@ -1,0 +1,32 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Article.CommentModel
+
+@{
+    Layout            = "_LayoutAdminJson"; //页面模板
+    ViewData["Title"] = "详细";
+}
+
+@(this.Model.ErrorInfo)
+
+@{
+if (this.Model.lstComment!=null){
+   foreach(var item in this.Model.lstComment){
+    <div class="row cmt-content">
+        <div class="row cmt-header">
+            <div class="col-sm-1 cmt-headerpic"><img src="/front/images/5.png" /></div>
+            <div class="col-sm-11 cmt-nickname"><span>@(item.Nickname)</span></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11 cmt-reply">
+                <p>@(item.Content)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11 cmt-content-bottom"><span>@(item.Createtime.ToString("yyyy-MM-dd"))</span><span></span><span></span></div>
+        </div>
+    </div>
+    }
+ }
+}

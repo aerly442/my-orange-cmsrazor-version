@@ -1,0 +1,61 @@
+[BindProperty]
+public {{tableName}}DTO {{tableName}} { get; set; } = default!;
+ public async Task<IActionResult> OnGetAsync(int? id)
+{
+   if (id == null || _context.News == null)
+   {
+       return NotFound();
+   }
+
+   var data    = id == 0 ? new {{tableName}}() : await _context.{{tableName}}.FirstOrDefaultAsync(m => m.Id == id);
+   //this.lstCat = await this._newsService.GetListNewsCat();
+   if (data == null)
+   {
+       return NotFound();
+   }
+   {{tableName}} = _mapper.Map<{{tableName}}DTO>(data);
+
+   return Page();
+}
+public async Task<IActionResult> OnPostAsync()
+{
+   if (!ModelState.IsValid)
+   {
+       return Page();
+   }
+
+   int id = {{tableName}}.Id;
+   var data = id == 0 ? new {{tableName}}() : await _context.{{tableName}}.FirstOrDefaultAsync<{{tableName}}>(m => m.Id == id);
+
+   _context.Entry(data).CurrentValues.SetValues({{tableName}});
+
+
+   try
+   {
+       if (id == 0)
+       {
+           //user_authorize_code.Createtime = DateTime.Now;
+           //user_authorize_code
+           _context.{{tableName}}.Add(data);
+       }
+       await _context.SaveChangesAsync();
+   }
+   catch (DbUpdateConcurrencyException)
+   {
+       if (!{{tableName}}Exists({{tableName}}.Id))
+       {
+           return NotFound();
+       }
+       else
+       {
+           throw;
+       }
+   }
+
+   return RedirectToPage("./Index");
+}
+
+private bool {{tableName}}Exists(int id)
+{
+   return (_context.{{tableName}}?.Any(e => e.Id == id)).GetValueOrDefault();
+}

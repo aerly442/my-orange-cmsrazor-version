@@ -1,0 +1,279 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Newss.IndexModel
+
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "用户列表";
+    //var userName = HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
+    this.ViewData["UserName"] = "";
+    this.ViewData["FieldNameList"] = new List<SelectListItem>
+            {
+                new SelectListItem("标题","Title"),
+                new SelectListItem("内容","Content")
+
+
+            };
+
+}
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理员列表
+            </h3>
+            <span>
+
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        数据列表
+                    </h4>
+                    <div class="toolbar no-padding">
+                        <div class="btn-group">
+                            <span class="btn btn-xs widget-collapse">
+                                <i class="icon-angle-down">
+                                </i>
+                            </span>
+                            <a asp-page="./Edit" asp-route-id="0">
+                                <span class="btn btn-xs"><i class="icon-plus"></i>添加</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <!-- search form start-->
+                    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="table-footer">
+
+                                <div class="col-md-1">
+                                    <div class="table-actions" style="line-height:32px">
+                                        <label>
+                                            搜索:
+                                        </label>
+
+                                    </div>
+                                </div>
+                              
+                                <div class="col-md-2">
+
+                                    <select asp-for="CatCode"
+                                            class="form-control"
+                                            asp-items="@(this.Model.lstCat)">
+                                    </select>
+
+                                </div>
+                                <div class="col-md-2">
+
+                                    <select asp-for="SearchDTO.FieldName"
+                                            class="form-control"
+                                            asp-items="@(ViewData["FieldNameList"] as List<SelectListItem>)">
+                                    </select>
+
+                                </div>
+       
+                                <div class="col-md-5">
+                                    <input asp-for="SearchDTO.SearchValue" class="form-control" />
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" name="btnSearch" value="搜索" id="btnSearch" class="btn">
+                                    <input type="hidden" value="search" name="action">
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                    <!-- search form end-->
+                    <!-- data table  start-->
+                    <table class="table table-hover table-striped table-bordered table-highlight-head">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Mainpic)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Title)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].CatName)
+                                </th>
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].File)
+                                </th>
+
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Url)
+                                </th>
+
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Sort)
+                                </th>
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Visit)
+                                </th>
+
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Is_charge)
+                                </th>
+
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Price)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Is_comment)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].Charge_type)
+                                </th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News[0].State)
+                                </th>
+
+
+
+                                <th>创建时间</th>
+
+                                <th>
+                                    操作
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.News)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+
+                                    <td>
+                                        <img src="@(item.Mainpic)" width="150" />
+                                    </td>
+
+                                    <td>
+                                        <a href=""></a>
+                                        <a asp-page="/article/show" asp-route-id="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</a>
+
+                                    </td>
+                                    <td>
+                                       @Html.DisplayFor(modelItem => item.CatName)
+
+                                    </td>
+
+
+                                    <td>
+                                        <a href="@item.File" target="_blank">文件</a>
+
+                                    </td>
+
+                                    <td>
+                                        <a href="@item.Url" target="_blank">外链</a>
+
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sort)
+                                    </td>
+
+
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Visit)
+                                    </td>
+
+                                    <td>
+                                        @(item.Is_charge == 1 ? "是" : "")
+
+                                    </td>
+
+
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Price)
+                                    </td>
+
+                                    <td>
+                                        @(item.Is_comment == 1 ? "是" : "")
+
+                                    </td>
+                                    <td>
+                                        @(item.Charge_type == 0 ? "内容" : "资源")
+
+                                    </td>
+
+                                    <td>
+                                        @(item.State == 1 ? "" : "屏蔽")
+
+                                    </td>
+
+
+                                    <td>@item.Createtime.ToString("yyyy-MM-dd")</td>
+
+                                    <td>
+                                        <a asp-page="./Detail" asp-route-id="@item.Id">详细</a> |
+                                        <a asp-page="./Edit" asp-route-id="@item.Id">编辑</a> |
+                                        <a asp-page="./DeleteData" class="text-danger" asp-route-id="@item.Id">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <!-- page split -->
+                    <div class="row">
+                        <div class="table-footer">
+                            <div class="col-md-6">
+                                <div class="table-actions">
+                                    <label>
+                                        共有数据：<span class="text-danger">@Model.TotalCount</span> 条
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <form class="form-horizontal" id="frmPage" method="post">
+                                    <ul class="pagination">
+
+                                        @Html.Raw(Model.SplitPageHtml)
+
+
+                                    </ul>
+                                    <input type="hidden" asp-for="SearchDTO.SearchValue" class="form-control" />
+                                    <input type="hidden" asp-for="SearchDTO.FieldName" class="form-control" />
+                                    <input type="hidden" asp-for="MyPageNumber" />
+                                    <input type="hidden" asp-for="MyActionType" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- data table  end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

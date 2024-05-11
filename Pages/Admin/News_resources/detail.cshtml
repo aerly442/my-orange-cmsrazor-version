@@ -1,0 +1,282 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_resources.DetailModel
+
+@{
+    Layout            = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "资源详细";
+}
+
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                资源详细
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+
+
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Resource)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Resource)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Note)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Note)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Updatetime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Updatetime)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Title)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Title)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.State)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.State)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Checktime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Checktime)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Seed)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Seed)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Violation_cnt)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Violation_cnt)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Click_pv)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Click_pv)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Save_pv)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Save_pv)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Expired_days)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Expired_days)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Expired_at)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Expired_at)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Last_click_pv)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Last_click_pv)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource.Last_save_pv)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource.Last_save_pv)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+
+
+
+                  
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <a asp-page="./Edit" asp-route-id="@Model.News_resource?.Id" class="btn btn-success">编辑</a> 
+                             
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Delete" asp-route-id="@Model.News_resource?.Id" class="btn btn-danger">删除</a> 
+
+                        </div>
+
+                    </div>
+
+   
+   
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+ 
+
+</div>

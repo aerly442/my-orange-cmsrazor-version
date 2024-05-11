@@ -1,0 +1,48 @@
+﻿@page
+@using MyOrangeCMS_RazorVersion.Service
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Newss.UploadModel
+@{
+
+    Layout = "_LayoutAdminLogin";
+}
+<form method="post" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-sm-3">
+            <input asp-for="Photo" class="custom-file-input form-control" accept="@(FileUploadService.ext)">
+        
+    </div>
+    <div class="col-sm-3">
+         <input type="submit" class="btn btn-success" />
+         <input type="hidden" value="action" name="ActionType" />
+         <input type="hidden" value="@this.Model.UploadFileName" name="UploadFileName" id="UploadFileName" />
+          <input type="hidden" value="@this.Model.ParentControlId" name="ParentControlId" id="ParentControlId" />
+    </div>
+  </div>
+ 
+
+        @{
+            if (this.Model.ShowScript)
+            {
+
+                         <script>let fileName = document.getElementById("UploadFileName").value;
+                        let ParentControlId = document.getElementById("ParentControlId").value;
+                        if (ParentControlId!=""){
+                            window.opener.document.getElementById(ParentControlId).value = fileName;
+                    
+                        }else{
+                                window.opener.document.getElementById("News_Mainpic").value = fileName;
+                                window.opener.document.getElementById("imgMainPic").src = fileName;
+                        }
+                        window.close();</script>
+
+             }
+             else{
+
+                                         <div class="row">
+                                             <p class="text text-danger">上传错误</p>
+                                         </div>
+             }
+
+    }
+
+</form>

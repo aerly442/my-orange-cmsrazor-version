@@ -1,0 +1,38 @@
+﻿@page  "{p:int?}" 
+@model MyOrangeCMS_RazorVersion.Pages.Front.GetIndexModel
+@{
+    Layout = "_LayoutAdminJson";
+}
+
+@foreach (var m in this.Model.lstNews)
+{
+
+    <article style="display:none">
+        <figure class="thumbnail thumbnail-hiden">
+            <span class="sort hidden-xs">
+                <a href="/article/show?id=@(m.Id).html"
+               rel="category">文章</a>
+            </span>
+            <a href="/article/show?id=@(m.Id)" rel="bookmark" class="home-thumbnail hidden-xs"
+           target="_blank">
+                <img width="210" src="@(m.Mainpic)"
+                 alt="@(m.Abstract)" />
+            </a>
+        </figure>
+        <div class="entry-content">
+            <h2 class="entry-title">
+                <a href="/article/show?id=@(m.Id)"
+               rel="bookmark" target="_blank">@(m.Title)</a>
+            </h2>
+            <div class="entry-site">@(m.Abstract)</div>
+            <div class="entry-meta">
+                @foreach(var k in m.Key_word.Split(" ")){
+                   @if (k!=" "){ 
+                           <a href='/article/listall?tag=@(k)' rel='tag' style='color:#94afbb'> @(k)</a>
+                }}                                      
+                <div class="time"><i></i>@(m.Createtime.ToString("yyyy-MM-dd"))</div>
+            </div>
+        </div>
+    </article>
+
+}
