@@ -1,0 +1,130 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_resource_lists.SelectModel
+
+@{
+    Layout                    = "_LayoutAdmin"; //页面模板
+    ViewData["Title"]         = "Page Name";
+    this.ViewData["UserName"] = "";
+    this.ViewData["FieldNameList"] = new List<SelectListItem>
+    {
+                
+         new SelectListItem("标题","Title")
+        
+
+     };
+
+}
+<script>
+function setParentControlValue(id,title){
+
+    var type  = document.getElementById("NewsType").value;
+    if (type =="1"){
+
+        window.opener.document.getElementById("NewsTitle").value = title;
+        window.opener.document.getElementById("News_resource_list_Newsid").value = id;   
+    }
+    else{
+        window.opener.document.getElementById("ResourceTitle").value = title;
+        window.opener.document.getElementById("News_resource_list_Newsresourceid").value = id;   
+    }
+          
+    window.close();
+
+}
+
+</script>
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+               列表 <!--  -->  
+            </h3>
+            <span>
+
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+    
+                <div class="widget-content">
+                    <!-- search form start-->
+                    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="table-footer">
+
+                                <div class="col-md-2">
+                                    <div class="table-actions" style="line-height:32px">
+                                        <label>
+                                            搜索:
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+
+                                    <select asp-for="SearchDTO.FieldName"
+                                            class="form-control"
+                                            asp-items="@(ViewData["FieldNameList"] as List<SelectListItem>)">
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input asp-for="SearchDTO.SearchValue" class="form-control" />
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="submit" name="btnSearch" value="搜索" id="btnSearch" class="btn">
+                                    <input type="hidden" value="search" name="action">
+                                    <input asp-for="Type" type="hidden" id="NewsType"  />
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                    <!-- search form end-->
+                    <!-- data table  start-->
+                    <table class="table table-hover table-striped table-bordered table-highlight-head">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News_resource_list[0].Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.News_resource_list[0].Title)
+                                </th>    
+                                <th>
+                                    操作
+                                </th>                        
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.News_resource_list)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        <a href="javascript:setParentControlValue('@Html.DisplayFor(modelItem => item.Id)','@Html.DisplayFor(modelItem => item.Title)')" class="text text-success">选择</a>
+                                    </td>
+
+                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

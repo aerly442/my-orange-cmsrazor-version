@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>维港季风-有见地的娱乐</title>
+    <meta name="description" content="维港季风有见地的娱乐" />
+    <meta name="keywords" content="维港季风 香港电影 香港小姐 TVB 娱乐新闻 娱乐" />
+    <meta name="image" content="/img/logo_new.png">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+
+
+    <link rel='stylesheet' href='/front/style/style.css' type='text/css' />
+    <link rel='stylesheet' href='/front/css/bootstrap.css' type='text/css' />
+    <link rel='stylesheet' href='/front/style/swiper-3.2.7.min.css' type='text/css' />
+    <link rel='stylesheet' href='/front/style/comment.css' type='text/css' />
+    <link rel="stylesheet" href="/front/style/roar.min.css">
+
+    <style>
+
+        .thumbnail-hiden {
+            overflow: hidden;
+            height: 140px;
+        }
+
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.428571429;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }   
+
+        .btn-warning {
+            color: #fff;
+            background-color: #f89406;
+            z-index: 2;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- 顶部菜单 -->
+    <header id="header" class="commen-header header-fixed">
+
+        @await Component.InvokeAsync("FrontTopMenu")
+
+
+ 
+    </header>    <!-- 顶部菜单 end -->
+
+    <div class="nav-overlay" style="display: none; transition: all 0.25s linear; opacity: 1;"></div>
+
+
+    <section id="content">
+        <div class="container">
+            <div class="ac">
+            </div>
+            <div class="row">
+                
+                     <!-- 内容主题 -->
+                 @RenderBody()
+
+                 <div class="col-md-4 sidebar hidden-xs hidden-sm">
+                    <!-- 右边 -->
+                    @await Component.InvokeAsync("FrontRight")
+
+
+                </div>
+
+                 
+
+            
+            </div>
+        </div>
+    </section>
+
+    <div id="linkBox">
+        <div class="linkBox container hidden-xs">
+
+
+            <h1 style="PADDING-TOP: 10px">友情链接</h1>
+            <div class="clearfix mt20">
+                <p>
+                    <a href="http://www.weibo.com/" target="_blank">新浪微博</a> |
+                    <a href="http://ent.163.com/" target="_blank">网易娱乐</a> |
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer hidden-xs">
+        <!-- 底部 -->
+        ﻿ <div class="container copy-right">
+            <div class="footer-tag-list">
+                <a href=/index.php" target="_blank" class="transition">关于我们</a>
+
+            </div>
+            <span>
+                <a target="_blank" href="http://beian.miit.gov.cn">粤ICP备2021034250号</a>
+            </span>
+        </div>
+
+
+
+
+    </footer>
+
+    <div class="fn-clear mini-footer visible-xs">
+        <p>Copyright ©2021 维港季风</p>
+        <span id="go_top"></span>
+    </div>
+
+    <div id="shangxia">
+        <div id="shang" title="↑ 返回顶部"></div>
+        <div id="xia" title="↓ 移至底部"></div>
+    </div>
+
+    <script type='text/javascript' src="/front/js/jquery.min.js"></script>
+    <script type='text/javascript' src='/front/js/swiper-3.2.7.min.js'></script>
+    <script type='text/javascript' src="/front/js/roar.min.js"></script>
+    <script type='text/javascript' src='/front/js/comment.js'></script>
+    <script type='text/javascript' src='/front/js/custom.js'></script>
+    <script type='text/javascript' src='/front/js/pay.js'></script>
+    <script>
+        function check() {
+            var keywords = $(".search-box #q").val();
+            if (keywords == '') {
+                alert("请输入搜索的关键词!");
+                return false;
+            } else {
+                $(".search-box form").submit();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

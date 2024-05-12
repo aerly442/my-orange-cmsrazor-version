@@ -1,0 +1,213 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_order_lists.EditModel
+
+ 
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "管理数据";
+    ViewData["UserPower"] = Service.UserPower.GetList();
+}
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理数据
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+
+    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+        <div class="row">
+            <div class="col-md-12 form-horizontal row-border">
+                <div class="widget box">
+                    <div class="widget-header">
+                        <h4>
+                            <i class="icon-reorder">
+                            </i>
+                            输入您的数据:
+                        </h4>
+                    </div>
+                    <div class="widget-content">
+
+                        <div class="alert alert-danger" id="divHidden" style="display: none;">
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                       
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Newsid" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Newsid" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Newsid" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Email" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Email" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Email" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.User_code" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.User_code" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.User_code" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Note" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Note" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Note" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Updatetime" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Updatetime" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Updatetime" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Pay_state" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Pay_state" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Pay_state" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Pay_price" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Pay_price" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Pay_price" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Pay_time" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Pay_time" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Pay_time" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.Trade_no" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.Trade_no" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.Trade_no" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.OrderId" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.OrderId" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.OrderId" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_order_list.PayUrl" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_order_list.PayUrl" class="form-control" style="width:30%;" />
+                            
+                        </div>
+                        <div class="row div-error">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_order_list.PayUrl" class="text-danger"></span>
+                        </div>
+
+                        
+
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input type="submit" value="保 存" class="btn btn-success" />
+                                <input asp-for="News_order_list.Id" type="hidden"  />
+                                
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

@@ -1,0 +1,117 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_categoriess.DeleteModel
+
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "删除用户";
+}
+
+
+
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+          
+            <h1></h1>
+
+            <h3>您确定要删除吗?</h3>
+           
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+
+
+                
+ 
+
+                    <div class="form-group">
+                                            <label class="col-md-2 ">
+                                                @Html.DisplayNameFor(model => model.News_categories.Name)
+                                            </label>
+                                            <div class="col-md-10">
+                                                <span class="text-default">
+                                                    @Html.DisplayFor(model => model.News_categories.Name)
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                    
+ 
+
+                    <div class="form-group">
+                                            <label class="col-md-2 ">
+                                                @Html.DisplayNameFor(model => model.News_categories.Code)
+                                            </label>
+                                            <div class="col-md-10">
+                                                <span class="text-default">
+                                                    @Html.DisplayFor(model => model.News_categories.Code)
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                    
+ 
+
+                    <div class="form-group">
+                                            <label class="col-md-2 ">
+                                                @Html.DisplayNameFor(model => model.News_categories.Sort)
+                                            </label>
+                                            <div class="col-md-10">
+                                                <span class="text-default">
+                                                    @Html.DisplayFor(model => model.News_categories.Sort)
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                    
+
+ 
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <form method="post">
+                                <input type="hidden" asp-for="News_categories.Id" />
+                                <input type="submit" value="删除" class="btn btn-danger" /> 
+                            </form>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Index" class="text-success">返回列表</a>
+
+                        </div>
+
+                    </div>
+
+ 
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,131 @@
+﻿@page 
+@model MyOrangeCMS_RazorVersion.Pages.Article.ShowModel 
+@{ 
+    Layout = "_LayoutFront"; 
+    string[] aryTag = this.Model.News.Key_word?.Split(' ').Where(x=>!string.IsNullOrWhiteSpace(x)).ToArray(); 
+}
+
+
+<div class="col-md-8 page-content">
+
+    <article>
+        <header class="single-header">
+            <div class="top-nav"> 文章&gt; 正文</div>
+            <h1>@this.Model.News.Title</h1>
+            <div class="single-meta">
+                <div class="tags">
+                    <i></i> @foreach(var tag in aryTag){
+                    <a href="/index.php/news_tag/listall/1/?tag=@(tag)" rel="tag"> @(tag)</a> }
+                </div>
+                <div class="time"><i></i>@this.Model.News.Createtime.ToString("yyyy-MM-dd")</div>
+                <div class="author">作者： @this.Model.News.Author </div>
+                <div class="copyfrom">来源： @this.Model.News.Source</div>
+                <div class="copyfrom">浏览量： @this.Model.News.Visit</div>
+            </div>
+            <!-- .entry-meta -->
+        </header>
+        <!-- .single-header -->
+        <div class="single-main">
+            @if (this.Model.ShowDownLoadDlg && this.Model.CanShowResource){
+                <section style="margin: 0px; padding: 20px; max-width: 100%; border-width: 1px; border-style: solid; border-color: rgb(112, 110, 127); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial;
+                            background-clip: initial; border-radius: 10px; box-sizing: border-box !important;
+                            word-wrap: break-word !important;">
+                    <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; clear: both;
+                            min-height: 1em; font-size: 15px; line-height: 1.5; color: rgb(81, 97, 93); box-sizing:
+                            border-box !important; word-wrap: break-word !important;">
+                    </p>
+                    <p style="margin-top: 0px; margin-bottom: 20px; padding: 0px; max-width: 100%; clear: both;
+                            min-height: 1em; font-size: 15px; line-height: 1.5; color: rgb(81, 97, 93); box-sizing:
+                            border-box !important; word-wrap: break-word !important;">
+                        <span style="margin: 0px; padding: 0px; max-width: 100%;
+                            box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(136, 136, 136);">
+                            <em class="has-text-color has-vivid-green-cyan-color" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                                资源下载地址：
+                                @this.Model.Resource
+                            </em>
+
+                        </span>
+                    </p>
+                </section>
+             }
+
+            <section style="margin: 0px; padding: 20px; max-width: 100%; border-width: 0px; border-style: solid; border-color: rgb(112, 110, 127); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial;
+                         background-clip: initial; border-radius: 10px; box-sizing: border-box !important;
+                         word-wrap: break-word !important;">
+                <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; clear: both;
+                          min-height: 1em; font-size: 15px; line-height: 1.5; color: rgb(81, 97, 93); box-sizing:
+                          border-box !important; word-wrap: break-word !important;">
+
+
+                </p>
+                <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; max-width: 100%; clear: both;
+                          min-height: 1em; font-size: 15px; line-height: 1.5; color: rgb(81, 97, 93); box-sizing:
+                          border-box !important; word-wrap: break-word !important;">
+                    <span style="margin: 0px; padding: 0px; max-width: 100%;
+                           box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(136, 136, 136);">
+                        <em style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">
+                            @this.Model.News.Abstract
+                        </em>
+
+                    </span>
+                </p>
+
+            </section>
+
+
+            <div class="mainpic" style="margin-top:10px">
+                <p style="text-align: center;"><img width="30%" src="@this.Model.News.Mainpic" data-src="@this.Model.News.Mainpic"></p>
+            </div>
+
+            @Html.Raw(this.Model.Content)
+
+        </div>
+
+        <div class="pageActive text-center">
+            <input type="hidden" id="txtNewsId" value="@(this.Model.News.Id)" />
+            <input type="hidden" id="txtNewsPrice" value="@(this.Model.News.Price)" />
+            @if(this.Model.ShowContentChargeDlg && !this.Model.CanShowFullContent){
+
+                
+
+                <a id="btnPayContent" class="btn btn-warning">支付@(((double)this.Model.News.Price /100).ToString("0.00"))元查看完整内容</a>
+            }
+        </div>
+
+    </article>
+    @if (this.Model.ShowDownLoadDlg){
+        <div class="comments download" >
+            <p class="has-text-color has-vivid-green-cyan-color"><strong>资源下载地址</strong>：</p>
+            <fieldset class="erphpdown erphpdown-content-vip erphpdown-see-pay" style="display:block">
+                
+                    <div id="divPayTips"  style="display: none;">
+                        <legend>内容查看</legend> 下载链接自动隐藏，请点 <a id="btnPayResource"  class="btn btn-warning">支付@(((double)this.Model.News.Price /100).ToString("0.00"))元查看完整内容</a> 
+                        <div class="erphpdown-tips" id="divTips">
+                            友情提示！<br> #1. 如有问题请添加微信：hkmovie1997<br> #2. 支付后在本页查看下载地址<br> #3. 链接为网盘，如有疑问请先咨询 <br>
+
+                        </div>
+                    </div>
+              
+                @if (this.Model.CanShowResource){
+                    <div class="erphpdown-tips" id="divResource">
+
+                        <p>
+                            @this.Model.Resource
+                        </p>
+                    </div>
+                }
+
+            </fieldset>
+
+        </div>
+    }
+    <!-- comment -->
+    @await Component.InvokeAsync("Comment",
+        new { 
+            newsId = this.Model.News.Id,
+            is_comment = this.Model.News.Is_comment
+        }
+    )
+ 
+
+</div>

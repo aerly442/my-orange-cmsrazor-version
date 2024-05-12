@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .layered-card {
+    position: relative;
+
+    /* Demo */
+    height: 6rem;
+    width: 6rem;
+}
+
+.layered-card::before {
+    background: #d1d5db;
+    content: '';
+
+    /* Position */
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(1rem, 1rem);
+
+    /* Size */
+    height: 100%;
+    width: 100%;
+
+    /* Display under the main content */
+    z-index: 0;
+}
+
+.layered-card__content {
+    /* Position */
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    /* Size */
+    height: 100%;
+    width: 100%;
+
+    z-index: 1;
+
+    background: #fff;
+}
+
+</style>
+</head>
+<body>
+    <div class="layered-card">
+            <div class="layered-card__content"></div>
+    </div>
+</body>
+</html>

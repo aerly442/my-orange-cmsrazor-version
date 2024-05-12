@@ -1,0 +1,20 @@
+[BindProperty]
+public {tableName}DTO {{tableName}} { get; set; } = default!;
+public async Task<IActionResult> OnGetAsync(int? id)
+{
+   if (id == null || _context.{tableName} == null)
+   {
+       return NotFound();
+   }
+
+   var data = await _context.{tableName}.FirstOrDefaultAsync(m => m.Id == id);
+   if (data == null)
+   {
+       return NotFound();
+   }
+   else 
+   {
+        {tableName} = _mapper.Map<{tableName}DTO>(data);
+   }
+   return Page();
+}

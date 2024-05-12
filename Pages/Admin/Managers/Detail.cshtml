@@ -1,0 +1,192 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Managers.DetailModel
+
+@{
+    Layout            = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "详细";
+}
+
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理员详细数据
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+
+
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.username)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.username)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.password)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.password)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.name)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.name)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.tel)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.tel)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.depart)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.depart)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.power)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.power)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.lastlogindatetime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.lastlogindatetime)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.Manager.lastloginip)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.Manager.lastloginip)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+
+
+
+                  
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <a asp-page="./Edit" asp-route-id="@Model.Manager?.Id" class="btn btn-success">编辑</a> 
+                             
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Delete" asp-route-id="@Model.Manager?.Id" class="btn btn-danger">删除</a> 
+
+                        </div>
+
+                    </div>
+
+   
+   
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+ 
+
+</div>

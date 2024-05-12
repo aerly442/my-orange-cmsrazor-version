@@ -1,0 +1,79 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.类名s.DetailModel
+
+@{
+    Layout            = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "详细";
+}
+
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理员详细数据
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+
+                  <!-- 详情字段  
+                  <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Id)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Id)
+                            </span>
+                        </div>
+
+                    </div>
+
+                -->                  
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <a asp-page="./Edit" asp-route-id="@Model.类名?.Id" class="btn btn-success">编辑</a> 
+                             
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Delete" asp-route-id="@Model.类名?.Id" class="btn btn-danger">删除</a> 
+
+                        </div>
+
+                    </div>
+
+   
+   
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+ 
+
+</div>

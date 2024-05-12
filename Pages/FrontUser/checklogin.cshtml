@@ -1,0 +1,12 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.FrontUser.CheckLoginModel
+
+@{
+    Layout            = "_LayoutAdminJson"; //页面模板
+    ViewData["Title"] = "详细";
+}
+{
+    "userId":@(this.Model.User.Id),
+    "nickName":"@(this.Model.User.Nickname)"
+
+}

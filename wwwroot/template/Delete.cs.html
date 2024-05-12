@@ -1,0 +1,39 @@
+        [BindProperty]
+        public {{tableName}}DTO {{tableName}} { get; set; } = default!;
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null || _context.{tableName} == null)
+            {
+                return NotFound();
+            }
+
+            var data = await _context.{{tableName}}.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (data == null)
+            {
+                return NotFound();
+            }
+            else 
+            {
+                {{tableName}} = _mapper.Map<{{tableName}}DTO>(data);
+            }
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync(int? id)
+        {
+            if (id == null || _context.{{tableName}} == null)
+            {
+                return NotFound();
+            }
+            var data = await _context.{{tableName}}.FindAsync(id);
+
+            if (data != null)
+            {
+               // Manager = manager;
+                _context.{{tableName}}.Remove(data);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage("./Index");
+        }

@@ -1,0 +1,62 @@
+﻿@using MyOrangeCMS_RazorVersion.Models;
+@using System.Collections;
+
+@{
+    var hashData = Model as Hashtable;
+    var hot = hashData["hot"] as List<News>;//菜单
+    var tag = hashData["tag"] as List<News_tag>;//栏目
+
+
+}
+
+<div class="pannel-block pannel-qrcode">
+    <div class="pannel-body">
+        <div class="qrcode-img">
+            <img src="/front/style/img/qrcode.jpg"
+                 alt="qrcode">
+        </div>
+        <div class="qrcode-text"><span>扫二维码</span><span>关注*维港季风*公众号</span><span>享更多福利</span></div>
+    </div>
+</div>
+<div class="pannel-block pannel-rank">
+    <div class="pannel-title">
+        <span class="pannel-ico"></span><span class="pannel-t">热文榜</span>
+    </div>
+    <div class="pannel-body">
+        <div class="rank-content">
+
+            <ul class="rank-item" id="day-list">
+
+                @foreach(var item in hot){
+                     
+                    <li>
+                        <a target="_blank" href="/article/show?id=@(item.Id)">@(item.Title)</a>
+                    </li>
+
+                }
+
+
+
+                
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="pannel-block pannel-label">
+    <div class="pannel-title">
+        <span class="pannel-ico"></span><span class="pannel-t">标签</span>
+    </div>
+    <div class="pannel-body">
+        <div class="rank-content tagcloud">
+              @foreach(var item in tag){
+                <a href="/article/listall?tag=@(item.Tag)" rel="tag" style='font-size: 14px;'>@(item.Tag)</a>
+              }
+
+            
+        </div>
+    </div>
+</div>
+

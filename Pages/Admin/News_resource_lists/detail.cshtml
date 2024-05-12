@@ -1,0 +1,137 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_resource_lists.DetailModel
+
+@{
+    Layout            = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "资源列表详细";
+}
+
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                资源列表详细
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+
+                                        <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource_list.Id)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource_list.Id)
+                            </span>
+                        </div>
+
+                    </div>
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource_list.Newsid)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource_list.Newsid)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource_list.Newsresourceid)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource_list.Newsresourceid)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource_list.Updatetime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource_list.Updatetime)
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_resource_list.Createtime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_resource_list.Createtime)
+                            </span>
+                        </div>
+
+                    </div>
+                
+
+
+
+                  
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <a asp-page="./Edit" asp-route-id="@Model.News_resource_list?.Id" class="btn btn-success">编辑</a> 
+                             
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Delete" asp-route-id="@Model.News_resource_list?.Id" class="btn btn-danger">删除</a> 
+
+                        </div>
+
+                    </div>
+
+   
+   
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+ 
+
+</div>

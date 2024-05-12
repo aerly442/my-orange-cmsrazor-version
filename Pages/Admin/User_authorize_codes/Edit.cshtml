@@ -1,0 +1,169 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.User_authorize_codes.EditModel
+
+ 
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "管理用户信息";
+    //ViewData["UserPower"] = Service.UserPower.GetList();
+}
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理信息
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+
+    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+        <div class="row">
+            <div class="col-md-12 form-horizontal row-border">
+                <div class="widget box">
+                    <div class="widget-header">
+                        <h4>
+                            <i class="icon-reorder">
+                            </i>
+                            输入您的数据:
+                        </h4>
+                    </div>
+                    <div class="widget-content">
+
+                        <div class="alert alert-danger" id="divHidden" style="display: none;">
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                        
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Nickname" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Nickname" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Nickname" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Openid" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Openid" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Openid" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Mobile" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Mobile" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Mobile" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Email" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Email" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Code" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Code" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Code" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Sendtime" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Sendtime" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Sendtime" class="text-danger"></span>
+                        </div> 
+
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Sendstate" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Sendstate" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Sendstate" class="text-danger"></span>
+                        </div>
+        
+                        
+      
+                        <div class="form-group">
+                            <label asp-for="User_authorize_code.Messagetype" class="col-sm-2 control-label"></label>
+                            <input asp-for="User_authorize_code.Messagetype" class="form-control" style="width:30%;" />
+                        </div>
+                        <div class="row div-error">
+                          <label class="col-sm-2 control-label">&nbsp;</label>
+                          <span asp-validation-for="User_authorize_code.Messagetype" class="text-danger"></span>
+                        </div>
+                        
+                         
+ 
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input type="submit" value="保 存" class="btn btn-success" />
+                                <input asp-for="User_authorize_code.Id" type="hidden"  />
+                                
+                       
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,387 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.Newss.DeleteDataModel
+
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "删除用户";
+}
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+          
+            <h3>您确定要删除吗?</h3>
+           
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Id)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Id)
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Title)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Title)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Author)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Author)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Source)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Source)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.News_categories_code)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.News_categories_code)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Mainpic)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                            <img src="@this.Model.News.Mainpic" width="200" />  
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Key_word)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Key_word)
+                            </span>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Abstract)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Abstract)
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Content)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.Raw(this.Model.News.Content)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.File)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.File)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Url)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Url)
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Is_comment)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @(this.Model.News.Is_comment == 1 ? "是" : "否")
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Charge_type)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @(this.Model.News.Charge_type == 1 ? "资源" : "内容")
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Sort)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Sort)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.State)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @(this.Model.News.State==1?"正常":"屏蔽")
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Hot)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                 @(this.Model.News.Hot==1?"是":"否")
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Visit)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Visit)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Is_charge)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @(this.Model.News.Is_charge == 1 ? "是" : "否")
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Charge_starttime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Charge_starttime)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Charge_endtime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Charge_endtime)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Price)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Price)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News.Createtime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News.Createtime)
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <form method="post">
+                                <input type="hidden" asp-for="News.Id" />
+                                <input type="submit" value="删除" class="btn btn-danger" /> 
+                            </form>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Index" class="text-success">返回列表</a>
+
+                        </div>
+
+                    </div>
+
+ 
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+ 

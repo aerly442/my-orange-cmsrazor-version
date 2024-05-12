@@ -1,0 +1,213 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_resources.EditModel
+
+ 
+@{
+    Layout = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "管理资源数据";
+    ViewData["UserPower"] = Service.UserPower.GetList();
+}
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                管理资源数据
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+
+    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+        <div class="row">
+            <div class="col-md-12 form-horizontal row-border">
+                <div class="widget box">
+                    <div class="widget-header">
+                        <h4>
+                            <i class="icon-reorder">
+                            </i>
+                            输入您的数据:
+                        </h4>
+                    </div>
+                    <div class="widget-content">
+
+                        <div class="alert alert-danger" id="divHidden" style="display: none;">
+                        </div>
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                        <div class="form-group">
+                            <label asp-for="News_resource.Title" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Title" class="form-control" style="width:30%;" />
+
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_resource.Title" class="text-danger"></span>
+                        </div>
+                       
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Resource" class="col-sm-2 control-label"></label>
+                            <textarea type="text" rows="2" cols="30" asp-for="News_resource.Resource" class="form-control" style="width:30%;">
+                            </textarea>
+                            
+                            
+                        </div>
+
+                        <div class="row">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_resource.Resource" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Note" class="col-sm-2 control-label"></label>
+                          
+                            <textarea type="text" rows="2" cols="30" asp-for="News_resource.Note" class="form-control" style="width:30%;">
+                            </textarea>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="News_resource.Seed" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Seed" class="form-control" style="width:30%;" />
+
+                        </div>
+
+                                                <div class="row">
+                            <label class="col-sm-2 control-label">&nbsp;</label>
+                            <span asp-validation-for="News_resource.Seed" class="text-danger"></span>
+                        </div>
+
+                        
+
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Checktime" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Checktime" class="form-control" style="width:30%;" />
+                            
+                        </div>
+
+                        
+
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Violation_cnt" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Violation_cnt" class="form-control" style="width:10%;" />
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Click_pv" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Click_pv" class="form-control" style="width:10%;" />
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Save_pv" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Save_pv" class="form-control" style="width:10%;" />
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Expired_days" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Expired_days" class="form-control" style="width:10%;" />
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Expired_at" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Expired_at" class="form-control" style="width:30%;" />
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Last_click_pv" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Last_click_pv" class="form-control" style="width:10%;" />
+                            
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label asp-for="News_resource.Last_save_pv" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Last_save_pv" class="form-control" style="width:10%;" />
+                            
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="News_resource.Updatetime" class="col-sm-2 control-label"></label>
+                            <input asp-for="News_resource.Updatetime" class="form-control" style="width:30%;" />
+
+                        </div>
+
+
+
+
+
+                        <div class="form-group">
+                            <label asp-for="News_resource.State" class="col-sm-2 control-label"></label>
+                            <select asp-for="News_resource.State"
+                                    class="form-control" style="width:10%;"
+                                    asp-items="@(MyOrangeCMS_RazorVersion.Service.NewsService.GetNewsState())">
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input type="submit" value="保 存" class="btn btn-success" />
+                                <input asp-for="News_resource.Id" type="hidden"  />
+                                
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

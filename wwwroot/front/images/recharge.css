@@ -1,0 +1,72 @@
+@charset "gb2312";
+
+body,div,header,nav,ul,li,footer,img{padding:0; margin:0;}
+abbr{border:0;}
+ul,li{list-style-type: none;}
+
+.piclist{ margin:0px; padding:0px;overflow:hidden; float:left;}
+.piclist ul{ width:940px; height:auto; margin:0px; padding:0px; float:left; overflow:hidden;}
+.piclist ul li{ width:147px; height:260px; float:left; overflow:hidden; margin:10px; padding:10px; background-color:#FFF; list-style-type:none; text-align:center;}
+
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,B{font-weight:normal; font-style:normal;}
+ol,ul{list-style:none;}
+caption,th{text-align:left;}
+
+
+.h9px{font-size:9px;}
+.h12px{font-size:0.75em;}
+.h14px{font-size:14px;}
+.h20px{font-size:20px;}
+
+body{font-family: "\5FAE\8F6F\96C5\9ED1","Arial";}
+a:link,
+a:visited{color:#787878; text-decoration:none;}
+a:hover{color:#bd0a01;text-decoration:underline;}
+
+.floatL{float:left;}
+.floatR{float:right;}
+
+
+.bai,.bai a:link,.bai a:visited
+{color:#fff; text-decoration:none;}
+.bai a:hover{color:#fff;text-decoration:underline;}
+
+.hui,.hui a:link,.hui a:visited
+{color:#b0b0b0; text-decoration:none;}
+.hui a:hover{color:#b0b0b0;text-decoration:underline;}
+
+.red,.red a,.red a:link,.red a:visited
+{color:#bd0a01; text-decoration:none;}
+.red a:hover{color:#bd0a01;text-decoration:underline;}
+
+.lv{color:#6aba1e;}
+.lv a:link,.lv a:visited
+{color:#6aba1e; text-decoration:none;}
+.lv a:hover{color:#6aba1e;text-decoration:underline;}
+
+header{width:100%;height:60px;overflow:hidden;background-color:#fff;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #CCCCCC; position:fixed; top:0px;}
+header .content{height:60px; overflow:hidden; margin:0 10px 0 10px	;}
+header .content .logo{width:40%; height:60px; float:left;}
+header .content .logo img{ height:60%; margin-top:10px;}
+header .content nav{ width:60%; height:60px; line-height:60px; float:right; text-align:center; font-size:0.875em;text-align:right;}
+header .content nav span{ margin-left:10px; }
+
+
+
+#content{width:100%; overflow:hidden; margin:20px; auto 0 auto; text-align:center;}
+#content .top{100%; height:30px;}
+#content span{ text-align:center;font-size:0.85em;}
+#content li{ line-height:40px;}
+
+footer{width:100%; height:60px; background-color:#383838; margin:40px 0 0 0; text-align:center; padding-top:20px; position:fixed; bottom:0px; }
+footer li{ font-size:14px; color:#747474; line-height:24px;}
+footer li span{ font-size:16px; margin-left:20px;}
+
+
+
+
+
+
+
+

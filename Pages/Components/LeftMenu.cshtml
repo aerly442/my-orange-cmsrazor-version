@@ -1,0 +1,70 @@
+﻿@using MyOrangeCMS_RazorVersion.Models;
+@using System.Collections;
+
+@{
+    var hashData = Model as Hashtable;
+    var model    = hashData["menu"] as List<Menu>;//菜单
+    var cat      = hashData["cat"] as List<News_categories>;//栏目
+
+
+}
+@{
+    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+    foreach (var m in model)
+    {
+        var menu = m as Menu;
+        if (menu.Parentid == 0)
+        {
+
+            var lstSubMenu = (model).Where(x => x.Parentid == menu.Id).OrderBy(x => x.Sort).ToList();
+            var currentUrl = Context.Request.Path.Value;
+            var classValue = lstSubMenu.Where(x => x.Linktext.Contains(currentUrl)).Count() > 0 ? "current" : "";
+
+
+            sb.AppendFormat("<li class=\"{0}\">", classValue);
+            sb.AppendFormat("<a href=\"{0}\"> <i class=\"icon-table\"></i>{1}</a>", menu.Linktext, menu.Name);
+            sb.Append("<ul class=\"sub-menu\">");
+
+            if (menu.Name == "网站栏目")
+            {
+
+                @foreach (var item in cat)
+                {
+
+                    sb.Append("<li>");
+
+                    if (item.Code.Length > 3)
+                    {
+                        sb.AppendFormat("<a href=\"/admin/newss/Index?code={1}\"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{0}</a>", item.Name,item.Code);
+                    }
+                    else
+                    {
+
+                        sb.AppendFormat("<a href=\"\"><i class=\"icon-angle-right\"></i>{0}</a>", item.Name);
+
+                    }
+
+                    sb.Append("</li>");
+
+
+                }
+
+            }
+            else
+            {
+                @foreach (var item in lstSubMenu)
+                {
+                    string url       = Context.Request.Path.ToString().ToLower();
+                    string className = url.IndexOf(item.Linktext.ToLower())>=0?"current":"";
+                    sb.AppendFormat("<li class='{2}'> <a href=\"{0}\"> <i class=\"icon-angle-right\"></i>{1} </a> </li>", item.Linktext, item.Name,className);
+                }
+            }
+
+            sb.Append("</ul>");
+            sb.Append("</li>");
+        }
+    }
+}
+
+@Html.Raw(sb.ToString())

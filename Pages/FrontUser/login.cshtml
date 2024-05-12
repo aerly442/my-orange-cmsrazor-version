@@ -1,0 +1,134 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.FrontUser.LoginModel; 
+@{ Layout = "_LayoutFrontFullStyle"; }
+
+<style>
+    .loginbox {
+        background-color: #fff;
+        width: 350px;
+        margin: 0 auto;
+        border: 1px solid #d9d9d9;
+        border-top: 5px solid #4d7496;
+        margin-top: 100px;
+    }
+    
+    .form-title {
+        text-align: center;
+        font-weight: 300;
+        margin-bottom: 25px;
+        font-size: 20px !important;
+    }
+    
+    .loginbox input {
+        border-left: 2px solid #4d7496;
+        border: 1px solid #ccc;
+    }
+    
+    .form-input {
+        text-align: center;
+        clear: both;
+    }
+    
+    .form-input {
+        height: 45px;
+        line-height: 45px;
+    }
+    
+    .form-input label {
+        font-size: 14px;
+        text-align: right;
+    }
+    
+    .form-input input {
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .btn-primary {
+        color: #fff;
+        background-color: #51a351;
+        border-color: #51a351;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 4px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.428571429;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    
+    .alert {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        margin-bottom: 15px;
+    }
+    
+    .alert-danger {
+        color: #b94a48;
+        background-color: #f2dede;
+        border-color: #eed3d7;
+    }
+    
+    .alert-success {
+        color: #468847;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+    
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+</style>
+
+<div class="col-md-12 page-content" style="height: 640px;">
+    <form class="form-horizontal" method="post" accept-charset="utf-8">
+        <div class="loginbox">
+            <h3 class="form-title">
+                登录
+            </h3>
+            @(Html.Raw(Model.ErrorInfo))
+
+            <div class="row form-input">
+                <div class="col-md-4"><label>用户名：</label></div>
+                <div class="col-md-7">
+                    <input asp-for="Email" type="text" placeholder="请输入用户名/邮件/手机" maxlength="100">
+                </div>
+            </div>
+            <div class="row form-input">
+                <div class="col-md-4"><label>密码：</label></div>
+                <div class="col-md-7">
+                    <input asp-for="Password" placeholder="请输入登录密码" type="password" maxlength="20">
+                </div>
+            </div>
+
+            <div class="row form-input">
+                <div class="col-md-4"><label><a href="Reg" class="text text-info">注册</a></label></div>
+                <div class="col-md-7">
+                    <button type="submit" class="submit btn btn-primary pull-right">
+                    马上登录  
+                </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.FrontUser.CreateOrderModel
+
+@{
+    Layout            = "_LayoutAdminJson"; //页面模板
+    ViewData["Title"] = "详细";
+}
+{
+    "trade_no":@(this.Model.UserOrder.Trade_no),
+    "userId":"@(this.Model.UserOrder.Userid)",
+    "newsId":"@(this.Model.UserOrder.Newsid)"
+
+}

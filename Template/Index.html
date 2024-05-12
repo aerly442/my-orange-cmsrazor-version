@@ -1,0 +1,151 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.类名s.IndexModel
+
+@{
+    Layout                    = "_LayoutAdmin"; //页面模板
+    ViewData["Title"]         = "Page Name";
+    this.ViewData["UserName"] = "";
+    this.ViewData["FieldNameList"] = new List<SelectListItem>
+    {
+                
+         //查询字段 new SelectListItem("菜单名称","Name")
+        
+
+     };
+
+}
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+               列表 <!--  -->  
+            </h3>
+            <span>
+
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        数据列表
+                    </h4>
+                    <div class="toolbar no-padding">
+                        <div class="btn-group">
+                            <span class="btn btn-xs widget-collapse">
+                                <i class="icon-angle-down">
+                                </i>
+                            </span>
+                            <a asp-page="Edit" asp-route-id="0">
+                                <span class="btn btn-xs"><i class="icon-plus"></i>添加</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-content">
+                    <!-- search form start-->
+                    <form class="form-horizontal" role="role" method="post" accept-charset="utf-8">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="table-footer">
+
+                                <div class="col-md-2">
+                                    <div class="table-actions" style="line-height:32px">
+                                        <label>
+                                            搜索:
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+
+                                    <select asp-for="SearchDTO.FieldName"
+                                            class="form-control"
+                                            asp-items="@(ViewData["FieldNameList"] as List<SelectListItem>)">
+                                    </select>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <input asp-for="SearchDTO.SearchValue" class="form-control" />
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="submit" name="btnSearch" value="搜索" id="btnSearch" class="btn">
+                                    <input type="hidden" value="search" name="action">
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                    <!-- search form end-->
+                    <!-- data table  start-->
+                    <table class="table table-hover table-striped table-bordered table-highlight-head">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <!-- 表头 //@Html.DisplayNameFor(model => model.Menu[0].Name) -->
+                                </th>
+
+                               
+
+
+                                <th>
+                                    操作
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.类名)
+                            {
+                                <tr>
+
+
+                                  
+
+                                    <td>
+                                        <a asp-page="./Detail" asp-route-id="@item.Id">详细</a> |
+                                        <a asp-page="./Edit" asp-route-id="@item.Id">编辑</a> |
+                                        <a asp-page="./Delete" class="text-danger" asp-route-id="@item.Id">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <!-- page split -->
+                    <div class="row">
+                        <div class="table-footer">
+                            <div class="col-md-6">
+                                <div class="table-actions">
+                                    <label>
+                                        共有数据：<span class="text-danger">@Model.TotalCount</span> 条
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <form class="form-horizontal" id="frmPage" method="post">
+                                    <ul class="pagination">
+
+                                        @Html.Raw(Model.SplitPageHtml)
+
+
+                                    </ul>
+                                    <input type="hidden" asp-for="SearchDTO.SearchValue" class="form-control" />
+                                    <input type="hidden" asp-for="SearchDTO.FieldName" class="form-control" />
+                                    <input type="hidden" asp-for="MyPageNumber" />
+                                    <input type="hidden" asp-for="MyActionType" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- data table  end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

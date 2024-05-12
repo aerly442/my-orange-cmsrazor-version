@@ -1,0 +1,167 @@
+@page
+@model MyOrangeCMS_RazorVersion.Pages.Admin.News_sources.DetailModel
+
+@{
+    Layout            = "_LayoutAdmin"; //页面模板
+    ViewData["Title"] = "详细数据";
+}
+
+
+
+<div class="container">
+    <div class="page-header">
+        <div class="page-title">
+            <h3>
+                详细数据
+            </h3>
+            <span>
+                <a asp-page="Index"> <<返回列表</a>
+            </span>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget box">
+                <div class="widget-header">
+                    <h4>
+                        <i class="icon-reorder">
+                        </i>
+                        详细内容
+                    </h4>
+                    <div class="toolbar no-padding">
+                    </div>
+                </div>
+                <div class="widget-content form-horizontal row-border">
+                <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Id)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Id)
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Title)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Title)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Note)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Note)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Url)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Url)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Type)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Type)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Updatetime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Updatetime)
+                            </span>
+                        </div>
+
+                    </div>
+
+ 
+
+                
+                <div class="form-group">
+                        <label class="col-md-2 ">
+                            @Html.DisplayNameFor(model => model.News_source.Createtime)
+                        </label>
+                        <div class="col-md-10">
+                            <span class="text-default">
+                                @Html.DisplayFor(model => model.News_source.Createtime)
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                  
+                    <div class="form-group">
+                        <label class="col-md-2 ">
+                            &nbsp;
+                        </label>
+                        <div class="col-md-2">
+                            <a asp-page="./Edit" asp-route-id="@Model.News_source?.Id" class="btn btn-success">编辑</a> 
+                             
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <a asp-page="./Delete" asp-route-id="@Model.News_source?.Id" class="btn btn-danger">删除</a> 
+
+                        </div>
+
+                    </div>
+
+   
+   
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  
+ 
+
+</div>
